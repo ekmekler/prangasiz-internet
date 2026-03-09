@@ -8,6 +8,21 @@ DPI (Deep Packet Inspection) engellerini aşmak için hazırlanmış, kullanım�
 - Temel olarak **Superonline** için yazılmıştır ancak diğer operatörlerde de çalışmaktadır.
 - Sizde çalışmaz ise Discord'dan **@dilimekmek** adresine operatörünüzün ismini belirterek ulaşın, birlikte çözelim.
 
+### Kullanılan Ayarlar
+
+Ayarlar, Android'deki **DPI Tunnel** uygulamasında iyi çalışan profille eşdeğer olacak şekilde yapılandırılmıştır:
+
+| DPI Tunnel Ayarı | Değer | goodbyedpi Karşılığı |
+|---|---|---|
+| İlk saldırı – Disorder | Disorder + Fake | `--native-frag` |
+| İlk saldırı – Sahte paket | Disorder + Fake | `--set-ttl 7 --wrong-chksum` |
+| Otomatik TTL (Auto TTL) | Kapalı | — (kaldırıldı) |
+| Sahte paket TTL'i | 7 | `--set-ttl 7` |
+| Yanlış SEQ (Wrong SEQ) | Kapalı | — (eklenmedi) |
+| Paket bölme konumu | 3 | `-f 3 -k 3 -n -e 3` |
+| DNS sunucusu (IPv4) | 8.8.8.8 (Google) | `--dns-addr 8.8.8.8` |
+| DNS sunucusu (IPv6) | 2001:4860:4860::8888 (Google) | `--dnsv6-addr 2001:4860:4860::8888` |
+
 ---
 
 ## Kullanım

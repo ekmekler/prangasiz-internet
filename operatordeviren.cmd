@@ -10,7 +10,12 @@ echo  DPI engelleri aşılıyor, lütfen bekleyin...
 echo.
 
 cd /d "%~dp0\dpi"
-start /min "" goodbyedpi.exe --auto-ttl 1-4-10 --dns-addr 94.140.14.14 --dns-port 53 --dnsv6-addr 2a10:50c0::ad1:ff --dnsv6-port 53
+start /min "" goodbyedpi.exe -p -r -s -f 3 -k 3 -n -e 3 -a ^
+  --native-frag ^
+  --set-ttl 7 ^
+  --wrong-chksum ^
+  --dns-addr 8.8.8.8 --dns-port 53 ^
+  --dnsv6-addr 2001:4860:4860::8888 --dnsv6-port 53
 
 echo  Başarılı! Program arka planda çalışıyor.
 echo.
