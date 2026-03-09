@@ -15,21 +15,38 @@ Ayarlar, Android'deki **DPI Tunnel** uygulamasında iyi çalışan profille eşd
 | DPI Tunnel Ayarı | Değer | goodbyedpi Karşılığı |
 |---|---|---|
 | İlk saldırı – Disorder | Disorder + Fake | `--native-frag` |
-| İlk saldırı – Sahte paket | Disorder + Fake | `--set-ttl 7 --wrong-chksum` |
+| İlk saldırı – Sahte paket | Disorder + Fake | `--set-ttl 7 --wrong-chksum` (TTL, preset'e göre değişir) |
 | Otomatik TTL (Auto TTL) | Kapalı | — (kaldırıldı) |
-| Sahte paket TTL'i | 7 | `--set-ttl 7` |
 | Yanlış SEQ (Wrong SEQ) | Kapalı | — (eklenmedi) |
 | Paket bölme konumu | 3 | `-f 3 -k 3 -n -e 3` |
-| DNS sunucusu (IPv4) | 8.8.8.8 (Google) | `--dns-addr 8.8.8.8` |
-| DNS sunucusu (IPv6) | 2001:4860:4860::8888 (Google) | `--dnsv6-addr 2001:4860:4860::8888` |
+| DNS sunucusu (IPv4) | AdGuard (94.140.14.14) | `--dns-addr 94.140.14.14` |
+| DNS sunucusu (IPv6) | AdGuard (2a10:50c0::ad1:ff) | `--dnsv6-addr 2a10:50c0::ad1:ff` |
 
 ---
 
 ## Kullanım
 
+### Hangi Preset'i Çalıştırmalıyım?
+
+Farklı ISP'ler farklı TTL değerlerine yanıt verir. Sırasıyla deneyin:
+
+| Dosya | TTL Değeri | Öneri |
+|-------|-----------|-------|
+| `operatordeviren.cmd` | **7** | İlk deneyin – çoğu operatörde çalışır |
+| `preset-ttl9.cmd` | **9** | TTL 7 işe yaramazsa deneyin |
+| `preset-ttl5.cmd` | **5** | TTL 9 da işe yaramazsa deneyin |
+| `preset-ttl11.cmd` | **11** | Son çare – geniş ağlı operatörler için |
+
+> **Not:** Aynı anda yalnızca **bir** preset çalıştırın. Yenisini denemeden önce eskisini kapatın:
+> ```
+> taskkill /f /im goodbyedpi.exe
+> ```
+> (Yönetici olarak çalıştırmanız gerekebilir.)
+
 ### Tek Seferlik Çalıştırma
 
-`operatordeviren.cmd` dosyasına **çift tıklayın**. Arka planda çalışmaya başlar.
+`operatordeviren.cmd` dosyasına **çift tıklayın**. Arka planda çalışmaya başlar.  
+Çalışmazsa yukarıdaki tablodan bir sonraki preset'i deneyin.
 
 ### Bilgisayar Açıldığında Otomatik Başlatma
 
@@ -52,6 +69,7 @@ Artık bilgisayarı her açtığınızda otomatik olarak devreye girecektir.
 | Sorun | Çözüm |
 |-------|-------|
 | Çalışmıyor | `operatordeviren.cmd` dosyasına sağ tıklayıp "Yönetici olarak çalıştır" deneyin |
+| TTL 7 ile çalışmıyor | `preset-ttl9.cmd`, `preset-ttl5.cmd` veya `preset-ttl11.cmd` dosyalarını sırasıyla deneyin |
 | Operatörünüze göre çalışmıyor | Discord'dan **@dilimekmek** ile iletişime geçin |
 
 ---

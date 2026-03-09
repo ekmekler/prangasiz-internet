@@ -1,23 +1,23 @@
 @echo off
 chcp 65001 >nul
-title Prangasız İnternet
+title Prangasız İnternet - Preset TTL 9
 echo.
 echo  =========================================
-echo   Prangasız İnternet - Başlatılıyor...
+echo   Prangasız İnternet - Preset: TTL 9
 echo  =========================================
 echo.
-echo  DPI engelleri aşılıyor, lütfen bekleyin...
+echo  DPI engelleri aşılıyor (TTL=9), lütfen bekleyin...
 echo.
 
 cd /d "%~dp0\dpi"
 start /min "" goodbyedpi.exe -p -r -s -f 3 -k 3 -n -e 3 -a ^
   --native-frag ^
-  --set-ttl 7 ^
+  --set-ttl 9 ^
   --wrong-chksum ^
   --dns-addr 94.140.14.14 --dns-port 53 ^
   --dnsv6-addr 2a10:50c0::ad1:ff --dnsv6-port 53
 
-echo  Başarılı! Program arka planda çalışıyor.
+echo  Başarılı! Program arka planda çalışıyor (TTL=9).
 echo.
 echo  Sorun yaşarsanız Discord: @dilimekmek
 echo.
