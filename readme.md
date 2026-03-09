@@ -1,26 +1,52 @@
-DPI kurallarını GPT ile birlikte yazdım amacım minimum miktarda kural kullanarak ekstra jitter/ping/lag çıkartmadan maksimum etkiyi sağlamak.
-Bunu aslında kendi sağlayıcım (superonline) için yazdım ama diğerlerinde de çalışacaktır.
-Sizde çalışmaz ise; discord @dilimekmek dm atın ve operatörünüzün ismini verin birlikte deneriz yenilerini yaparım.
+# Prangasız İnternet 🌐
 
+DPI (Deep Packet Inspection) engellerini aşmak için hazırlanmış, kullanımı kolay bir araç.
 
+## Hakkında
 
-Kullanım:
+- DPI kuralları minimum gecikme (ping/jitter/lag) ile maksimum etki sağlayacak şekilde ayarlanmıştır.
+- Temel olarak **Superonline** için yazılmıştır ancak diğer operatörlerde de çalışmaktadır.
+- Sizde çalışmaz ise Discord'dan **@dilimekmek** adresine operatörünüzün ismini belirterek ulaşın, birlikte çözelim.
 
-Tek seferliğine açmak için :
-operator deviren.cmd 'yi açın
+---
 
-Bilgisayarınız her açıldığında bunun da açılmasını istiyorsanız: operatör deviren.cmd ye sağ tıklayıp kısayol oluşturun ve win+r basıp shell:startup yazdığınızda açılan klasörün içine oluşturduğunuz kısayolu koyun aynı işi görecektir.
+## Kullanım
 
+### Tek Seferlik Çalıştırma
 
-Artık Bilgisayarınızın her açıldığında bunun da açılmasını istemiyorsanız: win+r basıp shell:startup yazdığınızda açılan klasörün içinden o kısayolu çıkartın/silin.
+`operatordeviren.cmd` dosyasına **çift tıklayın**. Arka planda çalışmaya başlar.
 
+### Bilgisayar Açıldığında Otomatik Başlatma
 
+`startup-ekle.cmd` dosyasına **çift tıklayın** — bu kadar! 🎉  
+Artık bilgisayarı her açtığınızda otomatik olarak devreye girecektir.
 
+> Elle yapmak isterseniz: `operatordeviren.cmd` ye sağ tıklayıp **"Kısayol Oluştur"** seçin.  
+> Ardından `Win + R` tuşlarına basıp `shell:startup` yazın ve kısayolu açılan klasöre taşıyın.
 
-Keyifli gezinmeler... 
-:>
+### Otomatik Başlatmayı Kaldırma
 
-yaptıklarımdan googol play stor sorumludur yazısı:
-Yasal Uyarı :OOO
+`startup-cikar.cmd` dosyasına **çift tıklayın** — hepsi bu. 🗑️
 
-Bu uygulamanın kullanımından doğan her türlü yasal sorumluluk kullanan kişiye aittir. Uygulama yalnızca eğitim ve araştırma amaçları ile yazılmış ve düzenlenmiş olup; bu uygulamayı bu şartlar altında kullanmak ya da kullanmamak kullanıcının kendi seçimidir. Açık kaynak kodlarının paylaşıldığı bu platformdaki düzenlenmiş bu proje, bilgi paylaşımı ve kodlama eğitimi amaçları ile yazılmış ve düzenlenmiştir.
+> Elle yapmak isterseniz: `Win + R` tuşlarına basıp `shell:startup` yazın ve açılan klasörden kısayolu silin.
+
+---
+
+## Sorun Giderme
+
+| Sorun | Çözüm |
+|-------|-------|
+| Çalışmıyor | `operatordeviren.cmd` dosyasına sağ tıklayıp "Yönetici olarak çalıştır" deneyin |
+| Operatörünüze göre çalışmıyor | Discord'dan **@dilimekmek** ile iletişime geçin |
+
+---
+
+## Yasal Uyarı
+
+Bu uygulamanın kullanımından doğan her türlü yasal sorumluluk kullanan kişiye aittir.  
+Uygulama yalnızca **eğitim ve araştırma amaçları** ile yazılmış ve düzenlenmiş olup; bu uygulamayı bu şartlar altında kullanmak ya da kullanmamak kullanıcının kendi seçimidir.  
+Açık kaynak kodlarının paylaşıldığı bu platformdaki düzenlenmiş bu proje, bilgi paylaşımı ve kodlama eğitimi amaçları ile yazılmış ve düzenlenmiştir.
+
+---
+
+Keyifli gezinmeler... :>
