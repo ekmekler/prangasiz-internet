@@ -72,7 +72,7 @@ Kaldırmak için `servis-sil.cmd` dosyasına **çift tıklayın** (yine yönetic
 
 > ⚠️ **Önemli:** `startup-ekle.cmd` ile `servis-kur.cmd` yöntemlerini **aynı anda kullanmayın** — ikisi birden çalışırsa iki goodbyedpi örneği çakışır. Servise geçtiyseniz önce `startup-cikar.cmd` çalıştırıp başlangıç kısayolunu kaldırın.
 >
-> Servisin kuralları `operatordeviren.cmd` (**TTL 7**) ile birebir aynıdır. Farklı bir preset istiyorsanız `servis-kur.cmd` içindeki `sc create ...` satırındaki argümanları ilgili preset ile değiştirin, ardından önce `servis-sil.cmd` sonra `servis-kur.cmd` çalıştırın.
+> Servis, **otomatik TTL (auto-ttl)** kural setini kullanır — TTL'i ağa göre kendisi ayarlar. Kuralları değiştirmek isterseniz `servis-kur.cmd` içindeki `sc create ...` satırındaki argümanları düzenleyin, ardından önce `servis-sil.cmd` sonra `servis-kur.cmd` çalıştırın.
 
 ---
 
