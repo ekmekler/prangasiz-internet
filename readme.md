@@ -62,6 +62,18 @@ Artık bilgisayarı her açtığınızda otomatik olarak devreye girecektir.
 
 > Elle yapmak isterseniz: `Win + R` tuşlarına basıp `shell:startup` yazın ve açılan klasörden kısayolu silin.
 
+### Servis Olarak Kurma (Kalıcı — En Sağlam Yöntem) ⭐
+
+`startup-ekle.cmd` yöntemi siz **giriş yaptıktan sonra** bir pencere ile açar. **Servis** yöntemi ise bir Windows hizmeti kurar ve **siz giriş yapmadan önce, tamamen arka planda** otomatik başlar. "Hep açık kalsın, hiç uğraşmayayım" diyorsanız en iyi yöntem budur.
+
+`servis-kur.cmd` dosyasına **çift tıklayın** ve çıkan **UAC (Yönetici)** penceresini onaylayın. Servis hemen başlar; bilgisayar her açıldığında otomatik devreye girer. Bir daha elle hiçbir şey açmanıza gerek kalmaz.
+
+Kaldırmak için `servis-sil.cmd` dosyasına **çift tıklayın** (yine yönetici onayı ister). Servisi durdurup siler, artık açılışta başlamaz.
+
+> ⚠️ **Önemli:** `startup-ekle.cmd` ile `servis-kur.cmd` yöntemlerini **aynı anda kullanmayın** — ikisi birden çalışırsa iki goodbyedpi örneği çakışır. Servise geçtiyseniz önce `startup-cikar.cmd` çalıştırıp başlangıç kısayolunu kaldırın.
+>
+> Servisin kuralları `operatordeviren.cmd` (**TTL 7**) ile birebir aynıdır. Farklı bir preset istiyorsanız `servis-kur.cmd` içindeki `sc create ...` satırındaki argümanları ilgili preset ile değiştirin, ardından önce `servis-sil.cmd` sonra `servis-kur.cmd` çalıştırın.
+
 ---
 
 ## Sorun Giderme
